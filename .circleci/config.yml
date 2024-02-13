@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+    test:
+      macos:
+        xcode: 14.3.1
+      resource_class: macos.m1.medium.gen1
+      steps:
+        - checkout
+        - run: brew install gcc
+        - run: gcc -o pthread pthread.c -lpthread
+        - run: ./pthread
+        - run: uname -m
+
+workflows:
+    build-test:
+      jobs:
+        - test
