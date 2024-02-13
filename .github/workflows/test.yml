@@ -11,5 +11,7 @@ jobs:
         run: gcc -o pthread pthread.c -lpthread
       - name: RUN
         run: ./pthread
+      - name: RUN
+        run: ./pthread2
       - name: check
         run: uname -m
