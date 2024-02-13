@@ -1,0 +1,15 @@
+name: Test
+on: [push]
+jobs:
+  MACOS:
+    name: MACOS
+    runs-on: macos-14
+    steps:
+      - name: git checkout
+        uses: actions/checkout@v4
+      - name: brew
+        run: brew install gcc
+      - name: compile
+        run: gcc -o pthread pthread.c -lpthread
+      - name: RUN
+        run: ./pthread
