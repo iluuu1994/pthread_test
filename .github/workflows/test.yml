@@ -15,3 +15,5 @@ jobs:
         run: ./pthread2
       - name: check
         run: uname -m
+      - name: check2
+        run: system_profiler SPHardwareDataType
